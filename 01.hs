@@ -5,7 +5,8 @@ import qualified Data.Text.IO as Text
 
 main = do
     ls <- fmap Text.lines (Text.readFile "./files/01.txt")
-    print (task2 (map Text.unpack ls))
+    print ("Task 1: " ++ (show (task1 (map Text.unpack ls) 0)))
+    print ("Task 2: " ++ (show (task2 (map Text.unpack ls))))
 
 task1::[String] -> Int -> Int
 task1 [] a = a
