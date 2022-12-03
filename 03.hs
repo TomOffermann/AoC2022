@@ -102,3 +102,4 @@ mapChar 'W' = 49
 mapChar 'X' = 50
 mapChar 'Y' = 51
 mapChar 'Z' = 52
+mapChar _ = -1
