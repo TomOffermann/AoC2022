@@ -7,7 +7,6 @@ main = do
     ls <- fmap Text.lines (Text.readFile "./files/03.txt")
     print $ "Task 1: " ++ (show $ task1 (map Text.unpack ls))
     print $ "Task 2: " ++ (show $ task2 (map Text.unpack ls))
-    --print $ "Task 2: " ++ (show $ task2 (map Text.unpack ls))
 
 task1::[String] -> Int
 task1 ls = sum $ map mapChar $ map common $ map halve ls
