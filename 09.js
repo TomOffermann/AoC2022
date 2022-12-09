@@ -18,27 +18,30 @@ D 10
 L 25
 U 20`.split("\n");
 
-let test3 = ["R 5", "U 8"]
+let test3 = ["R 5", "U 8"];
 
-let moveTo = (x,y, tx,ty) => {
-  if(!((Math.abs(tx - x) == 1 && Math.abs(ty - y) == 1) ||
-  (x == tx && y == ty) ||
-  (Math.abs(tx - x) == 1 && y == ty) ||
-  (Math.abs(ty - y) == 1 && x == tx))) {
-
-    if(x > tx) {
+let moveTo = (x, y, tx, ty) => {
+  if (
+    !(
+      (Math.abs(tx - x) == 1 && Math.abs(ty - y) == 1) ||
+      (x == tx && y == ty) ||
+      (Math.abs(tx - x) == 1 && y == ty) ||
+      (Math.abs(ty - y) == 1 && x == tx)
+    )
+  ) {
+    if (x > tx) {
       tx++;
     } else if (tx > x) {
       tx--;
     }
-    if(y > ty) {
+    if (y > ty) {
       ty++;
     } else if (ty > y) {
       ty--;
     }
   }
-  return [tx,ty]
-} 
+  return [tx, ty];
+};
 
 let curr = lines; //lines.slice(0,20);
 curr = curr.map((e) => e.split(" "));
@@ -121,10 +124,21 @@ let task2 = (input) => {
       for (let j = 1; j <= amount; j++) {
         x++;
         for (let k = 0; k < 9; k++) {
-          if(k == 0) {
-            snake[k] = chaseAfter(k == 0 ? x : snake[k - 1][0], k == 0 ? y : snake[k - 1][1], snake[k][0], snake[k][1], dir);
+          if (k == 0) {
+            snake[k] = chaseAfter(
+              k == 0 ? x : snake[k - 1][0],
+              k == 0 ? y : snake[k - 1][1],
+              snake[k][0],
+              snake[k][1],
+              dir
+            );
           } else {
-            snake[k] = moveTo(snake[k-1][0],snake[k-1][1], snake[k][0], snake[k][1]);
+            snake[k] = moveTo(
+              snake[k - 1][0],
+              snake[k - 1][1],
+              snake[k][0],
+              snake[k][1]
+            );
           }
           //console.log(snake[k]);
           if (k == 8) {
@@ -138,10 +152,21 @@ let task2 = (input) => {
       for (let j = 1; j <= amount; j++) {
         x--;
         for (let k = 8; k >= 0; k--) {
-          if(k == 0) {
-            snake[k] = chaseAfter(k == 0 ? x : snake[k - 1][0], k == 0 ? y : snake[k - 1][1], snake[k][0], snake[k][1], dir);
+          if (k == 0) {
+            snake[k] = chaseAfter(
+              k == 0 ? x : snake[k - 1][0],
+              k == 0 ? y : snake[k - 1][1],
+              snake[k][0],
+              snake[k][1],
+              dir
+            );
           } else {
-            snake[k] = moveTo(snake[k-1][0],snake[k-1][1], snake[k][0], snake[k][1]);
+            snake[k] = moveTo(
+              snake[k - 1][0],
+              snake[k - 1][1],
+              snake[k][0],
+              snake[k][1]
+            );
           }
           if (k == 8) {
             visited.add(snake[k].join(","));
@@ -153,11 +178,21 @@ let task2 = (input) => {
       for (let j = 1; j <= amount; j++) {
         y++;
         for (let k = 0; k < 9; k++) {
-          if(k == 0) {
-            snake[k] = chaseAfter(k == 0 ? x : snake[k - 1][0], k == 0 ? y : snake[k - 1][1], snake[k][0], snake[k][1], dir);
+          if (k == 0) {
+            snake[k] = chaseAfter(
+              k == 0 ? x : snake[k - 1][0],
+              k == 0 ? y : snake[k - 1][1],
+              snake[k][0],
+              snake[k][1],
+              dir
+            );
           } else {
-            snake[k] = moveTo(snake[k-1][0],snake[k-1][1], snake[k][0], snake[k][1]);
-
+            snake[k] = moveTo(
+              snake[k - 1][0],
+              snake[k - 1][1],
+              snake[k][0],
+              snake[k][1]
+            );
           }
           //console.log(snake[k]);
           if (k == 8) {
@@ -171,10 +206,21 @@ let task2 = (input) => {
       for (let j = 1; j <= amount; j++) {
         y--;
         for (let k = 8; k >= 0; k--) {
-          if(k == 0) {
-            snake[k] = chaseAfter(k == 0 ? x : snake[k - 1][0], k == 0 ? y : snake[k - 1][1], snake[k][0], snake[k][1], dir);
+          if (k == 0) {
+            snake[k] = chaseAfter(
+              k == 0 ? x : snake[k - 1][0],
+              k == 0 ? y : snake[k - 1][1],
+              snake[k][0],
+              snake[k][1],
+              dir
+            );
           } else {
-            snake[k] = moveTo(snake[k-1][0],snake[k-1][1], snake[k][0], snake[k][1]);
+            snake[k] = moveTo(
+              snake[k - 1][0],
+              snake[k - 1][1],
+              snake[k][0],
+              snake[k][1]
+            );
           }
           if (k == 8) {
             visited.add(snake[k].join(","));
