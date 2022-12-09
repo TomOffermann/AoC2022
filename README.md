@@ -1,6 +1,6 @@
 ## 🎄 Advent of Code solutions in Haskell 🪄:
 
-###Nevermind 🤡
+### Nevermind 🤡
 >I am way to dumb to solve the exercises in haskall in a reasonable amount of time :)
 >So i am doing them in Javascript, since everybody knows
 >JS is the next best thing to haskell 🙃
