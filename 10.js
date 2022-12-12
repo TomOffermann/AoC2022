@@ -107,8 +107,8 @@ console.log("Task 1: ", task1(lines))
 count = 1;
 console.log("Task 2: ", task2(lines).map((e,i) => {
   if(i > 0) {
-    return e.slice(1);
+    return e.slice(1).split("").map(f => f == "#" ? "✅" : "  ").join("");
   } else {
-    return e;
+    return e.split("").map(f => f == "#" ? "✅" : "  ").join("");
   }
 }));
