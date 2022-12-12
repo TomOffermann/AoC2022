@@ -1,7 +1,11 @@
 let lines = require("fs").readFileSync("./files/10.txt", "utf-8").split("\n");
 
-let count = 1;
+/*
+  NOTE: This is not an elegant solution by any means!!!
+  (very hacky)
+*/
 
+let count = 1;
 let task1 = (input) => {
   input = input.map(e => e.split(" "));
   input = input.map(e => {
