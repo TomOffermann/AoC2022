@@ -19,6 +19,7 @@ let top = null;
 let directory = new Directory([], null, null, [], 0);
 top = directory;
 
+// Update the filesizes of all parents of a given file/dir
 let updateParents = (directory, size) => {
   if (directory.parent == null) {
     return;
@@ -52,6 +53,7 @@ for (let i = 0; i < lines.length; i++) {
   }
 }
 
+// simple dfs:
 let recurse = (dir) => {
   let count = 0;
   if (dir.size <= 100000) {
@@ -64,6 +66,7 @@ let recurse = (dir) => {
   return count;
 };
 
+// find best-fitting dir:
 let findDir = (dir, space) => {
   if (dir.size >= space) {
     let min = dir.size;
