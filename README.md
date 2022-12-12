@@ -9,7 +9,7 @@
 
 [Haskell Download & Documentation](https://www.haskell.org)
 
-### Use case (have ghc installed):
+### Run (have ghc installed):
 
 REPL:
 ````shell
