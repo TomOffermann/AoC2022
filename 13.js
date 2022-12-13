@@ -92,6 +92,5 @@ for(let i = 0; i < listToSort.length; i++) {
   }
 }
 
-console.log(compare([[2],2,3,4],[[2,1],4], 0));
 console.log("Task 1: ", sum(rightOrder));
 console.log("Task 2: ", aIndex * bIndex);
