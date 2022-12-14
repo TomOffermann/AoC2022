@@ -67,6 +67,9 @@ for (let i = 0; i < lines.length; i++) {
   let pack = lines[i].split("\n");
   let l1 = parseList(pack[0],0)[0];
   let l2 = parseList(pack[1],0)[0];
+  if(compare(l1, l2)) {
+    rightOrder.push(i+1)
+  }
   listToSort.push(l1,l2);
 }
 
